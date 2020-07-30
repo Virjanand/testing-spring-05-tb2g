@@ -1,6 +1,5 @@
 package org.springframework.samples.petclinic.web;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -21,18 +20,13 @@ import static org.mockito.Mockito.when;
 @ExtendWith(MockitoExtension.class)
 class VetControllerTest {
 
-    private Map<String, Object> model;
+    private final Map<String, Object> model = new HashMap<>();
 
     @Mock
     private ClinicService clinicService;
 
     @InjectMocks
     VetController vetController;
-
-    @BeforeEach
-    void setUp() {
-        model = new HashMap<>();
-    }
 
     @Test
     void vetListUrlCorrect() {
