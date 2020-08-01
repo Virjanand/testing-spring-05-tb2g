@@ -11,7 +11,7 @@ import org.springframework.samples.petclinic.repository.PetRepository;
 import java.util.Collection;
 import java.util.List;
 
-import static java.util.Collections.singletonList;
+import static java.util.Collections.emptyList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.BDDMockito.given;
 
@@ -19,7 +19,7 @@ import static org.mockito.BDDMockito.given;
 class ClinicServiceImplTest {
 
     @Mock
-    PetRepository petRepository;
+    private PetRepository petRepository;
 
     @InjectMocks
     private ClinicServiceImpl clinicService;
@@ -27,7 +27,7 @@ class ClinicServiceImplTest {
     @Test
     void findPetTypes() {
         //given
-        List<PetType> petTypes = singletonList(new PetType());
+        List<PetType> petTypes = emptyList();
         given(petRepository.findPetTypes()).willReturn(petTypes);
 
         //when
