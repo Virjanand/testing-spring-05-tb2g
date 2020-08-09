@@ -1,4 +1,4 @@
-package org.springframework.samples.petclinic.sfg;
+package org.springframework.sfg;
 
 public interface WordProducer {
     String getWord();
